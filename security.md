@@ -103,7 +103,7 @@ this is an exception handling for HTTP Basic. There is also HTTP Form Login that
 
 ### Access Denied Flow - User is authenticated, but doesn't have authority to access a resource
 * user has ROLE_USER but is trying to access "/admin/messages" 
-    * spring security is configured with  `.antMatchers("/admin/**").hasRole("ROLE_USER")`
+    * spring security is configured with  `.antMatchers("/admin/**").hasRole("ROLE_ADMIN")`
 * FilterSecurityInterceptor will call the AccessDecisionManager which calls the AccessDecisionVoters which will
 return "denied" to the AccessDecisionManager
 * AccessDecisionManager with throw `AccessDeniedException` which gets handled by the `ExceptionTranslationFilter`
